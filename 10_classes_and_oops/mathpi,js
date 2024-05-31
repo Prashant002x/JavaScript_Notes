@@ -1,0 +1,29 @@
+const descripter  = Object.getOwnPropertyDescriptor(Math, "PI")
+// Math is the module and PI is the key
+// tells about hidden things about objects
+// Writable : false in this case 
+
+console.log(descripter);
+console.log(Math.PI);
+Math.Pi= 5
+console.log(Math.PI);
+
+const chai  = {
+    name: 'ginger Chai',
+    price: 250 ,
+    isAvailable: true
+}
+console.log(Object.getOwnPropertyDescriptor(chai,"name"));
+
+Object.defineProperty(chai,"name", {writable : false, enumerable: false});
+
+
+console.log(Object.getOwnPropertyDescriptor(chai,"name"));
+// enumerable is false we won't be able to do the below things
+// name will not be printed if 
+// Will not become part of loop
+for (let [key ,value] of chai) {
+    if(typeof value !=='function'){
+    console.log(`${key} : ${value}`);
+    }
+}

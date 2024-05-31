@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> chai aur code</h1></h2>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    // setTimeout(function() {
+    //     console.log("Hitesh") ;
+    // },2000)    // Method  and it calls an  window API
+
+    const sayHitesh = function() {
+        console.log("Hitesh");
+    }
+    const changeText = function(){document.querySelector('h1').innerHTML = "BEST JS SERIES"
+    }
+    setTimeout(sayHitesh,2000) //  Giving reference only
+   const changeMe=  setTimeout(changeText,2000) 
+
+    document.querySelector('#stop').addEventListener('click' ,function(){
+        clearTimeout(changeMe) // Stopping setTimeOut from executing  In case of button click
+        console.log("STOPPED")
+    })
+ </script>
+</html>
